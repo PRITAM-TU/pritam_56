@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Pritam_2.O (Pritam Tung) | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/jpg" href="favicon.ico">
+ 
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" href="critical.css" as="style">
+  <link rel="preload" href="main.js" as="script">
+
+  <!-- Font Awesome for more icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="script.js" defer></script>
+  <script src="analytics.js" async></script>
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+  <link rel="dns-prefetch" href="//cdn.example.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Liter&family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Liter&family=National+Park:wght@200..800&family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css for additional animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Loading Screen -->
+  <div class="loading-screen fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div class="loading-spinner animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-75"></div>
+    <span class="ml-4 text-xl font-semibold">Loading Portfolio...</span>
+  </div>
+  
+  <!-- Floating Particles Background -->
+  <div id="particles-js" class="fixed inset-0 -z-10"></div>
+  
+  <!-- Header with improved navigation -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <h2 class="logo flex items-center">
+        <span class="text-2xl mr-1">👨‍💻</span>
+        <span>P<span class="text-blue-600">ritam_2.O</span></span>
+      </h2>
+      <div class="block lg:hidden">
+        <button id="nav-toggle" class="focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+      <nav class="hidden lg:flex gap-6 items-center" id="nav-content">
+        <a href="#about" class="nav-link hover:text-blue-600 transition-colors flex items-center">
+          <i class="fas fa-user mr-2"></i> About
+        </a>
+        <a href="#projects" class="nav-link hover:text-blue-600 transition-colors flex items-center">
+          <i class="fas fa-code mr-2"></i> Projects
+        </a>
+        <a href="#contact" class="nav-link hover:text-blue-600 transition-colors flex items-center">
+          <i class="fas fa-envelope mr-2"></i> Contact
+        </a>
+        <a href="#download" class="nav-link hover:text-blue-600 transition-colors flex items-center">
+          <i class="fas fa-download mr-2"></i> CV
+        </a>
+        <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+          <img src="moon.png" alt="Toggle theme" id="icon" class="w-6 h-6">
+        </button>
+      </nav>
+    </div>
+    <nav id="nav-mobile" class="hidden lg:hidden bg-white shadow-lg rounded-lg mt-2 py-2 absolute right-6 w-48">
+      <a href="#about" class="block px-4 py-2 hover:bg-gray-100 flex items-center">
+        <i class="fas fa-user mr-2"></i> About
+      </a>
+      <a href="#projects" class="block px-4 py-2 hover:bg-gray-100 flex items-center">
+        <i class="fas fa-code mr-2"></i> Projects
+      </a>
+      <a href="#contact" class="block px-4 py-2 hover:bg-gray-100 flex items-center">
+        <i class="fas fa-envelope mr-2"></i> Contact
+      </a>
+      <a href="#download" class="block px-4 py-2 hover:bg-gray-100 flex items-center">
+        <i class="fas fa-download mr-2"></i> Download CV
+      </a>
+      <div class="px-4 py-2 flex justify-between items-center">
+        <span>Theme:</span>
+        <button id="theme-toggle-mobile" class="p-2 rounded-full focus:outline-none">
+          <img src="moon.png" alt="Toggle theme" class="w-5 h-5">
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section with improved 3D effects -->
+  <section class="hero-3d relative overflow-hidden min-h-screen flex items-center">
+    <canvas id="hero-canvas" class="absolute inset-0 -z-10"></canvas>
+    <div class="container mx-auto px-6 py-16 flex flex-col lg:flex-row items-center">
+      <div class="hero-content lg:w-1/2" id="leftsection" data-aos="slide-left">
+        <div class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4 animate__animated animate__fadeIn">
+          <i class="fas fa-rocket mr-1"></i> Welcome to my world!
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Hello, I'm</span><br>
+          <span class="logo_1 animate__animated animate__fadeIn">PRITAM TUNG</span>
+        </h1>
+        <p class="text-xl mb-8 text-gray-700 animate__animated animate__fadeIn animate__delay-1s">
+          <i class="fas fa-quote-left text-blue-400 mr-2"></i>
+          A passionate Web Developer crafting digital experiences that matter
+          <i class="fas fa-quote-right text-blue-400 ml-2"></i>
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a class="btn-3d btn-primary flex items-center" href="#about">
+            <i class="fas fa-chevron-down mr-2"></i> Explore More
+          </a>
+          <a class="btn-3d btn-secondary flex items-center" href="#contact">
+            <i class="fas fa-paper-plane mr-2"></i> Hire Me
+          </a>
+        </div>
+        
+        <!-- Tech Stack Icons -->
+        <div class="mt-12 animate__animated animate__fadeIn animate__delay-2s">
+          <p class="text-gray-600 mb-4 flex items-center">
+            <i class="fas fa-cog mr-2 text-blue-500"></i> Tech I work with:
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="tech-icon" title="HTML5">
+              <i class="fab fa-html5 text-orange-500 text-2xl"></i>
+            </div>
+            <div class="tech-icon" title="CSS3">
+              <i class="fab fa-css3-alt text-blue-500 text-2xl"></i>
+            </div>
+            <div class="tech-icon" title="JavaScript">
+              <i class="fab fa-js-square text-yellow-500 text-2xl"></i>
+            </div>
+            <div class="tech-icon" title="React">
+              <i class="fab fa-react text-blue-400 text-2xl"></i>
+            </div>
+            <div class="tech-icon" title="Python">
+              <i class="fab fa-python text-blue-600 text-2xl"></i>
+            </div>
+            <div class="tech-icon" title="Java">
+              <i class="fab fa-java text-red-500 text-2xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="rightsection lg:w-1/2 mt-12 lg:mt-0 flex justify-center" data-aos="flip-up">
+        <div class="relative">
+          <img 
+            alt="Profile" 
+            class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-2xl animate-slide-up-down" 
+            src="Screenshot 2025-04-14 222148.png"
+          />
+          <div class="absolute -bottom-5 -right-5 bg-white p-3 rounded-full shadow-lg">
+            <div class="bg-blue-600 text-white p-3 rounded-full animate-pulse">
+              <i class="fas fa-code text-xl"></i>
+            </div>
+          </div>
+          <div class="absolute -top-5 -left-5 bg-white p-2 rounded-full shadow-lg">
+            <div class="bg-green-500 text-white p-2 rounded-full animate-bounce">
+              <i class="fas fa-check text-sm"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#about" class="text-gray-600 hover:text-blue-600">
+        <i class="fas fa-chevron-down text-2xl"></i>
+      </a>
+    </div>
+  </section>
+  
+  <!-- About Section with timeline -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6" data-aos="slide-left">
+      <div class="text-center mb-16">
+        <h2 class="section-heading text-4xl font-bold mb-4 relative inline-block">
+          <span class="relative z-10">About Me</span>
+          <span class="absolute -bottom-2 left-0 w-full h-2 bg-blue-100 z-0"></span>
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Get to know more about who I am and what I do
+        </p>
+      </div>
+      
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/3 flex justify-center" data-aos="fade-right">
+          <div class="relative">
+            <img 
+              alt="Profile" 
+              class="w-64 h-64 object-cover rounded-xl shadow-xl border-4 border-white" 
+              src="Screenshot 2025-04-14 222148.png"
+            />
+            <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-4 rounded-xl shadow-lg">
+              <i class="fas fa-medal text-2xl"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-2/3" data-aos="fade-left">
+          <div class="bg-gray-50 p-8 rounded-xl shadow-inner">
+            <h3 class="text-2xl font-bold mb-4 flex items-center">
+              <i class="fas fa-user-graduate mr-3 text-blue-600"></i>
+              Who am I?
+            </h3>
+            <p class="mb-6 text-gray-700 leading-relaxed">
+              My name is Pritam Tung, a passionate web developer with experience in creating dynamic and responsive websites using modern web technologies. Currently pursuing Bachelor of Technology in Computer Science and Engineering from Hooghly Engineering and Technology College, I'm constantly expanding my technical skills and knowledge.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-blue-500">
+                <h4 class="font-bold mb-2 flex items-center">
+                  <i class="fas fa-laptop-code mr-2 text-blue-500"></i>
+                  Development Skills
+                </h4>
+                <ul class="space-y-2">
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Frontend: HTML5, CSS3, JavaScript
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Backend: Python, Java, Node.js
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Frameworks: React
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-purple-500">
+                <h4 class="font-bold mb-2 flex items-center">
+                  <i class="fas fa-graduation-cap mr-2 text-purple-500"></i>
+                  Education
+                </h4>
+                <ul class="space-y-2">
+                  <li class="flex items-center">
+                    <i class="fas fa-university text-blue-400 mr-2"></i>
+                    B.Tech in CSE - HETC (2023-2027)
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-school text-yellow-500 mr-2"></i>
+                    Higher Secondary - WBCHSE (2021-2023)
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="flex flex-wrap gap-4">
+              <a href="#projects" class="btn-3d btn-primary flex items-center">
+                <i class="fas fa-eye mr-2"></i> View My Work
+              </a>
+              <a href="#contact" class="btn-3d btn-secondary flex items-center">
+                <i class="fas fa-paper-plane mr-2"></i> Contact Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Skills Progress -->
+      <div class="mt-20" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-8 text-center flex items-center justify-center">
+          <i class="fas fa-chart-line mr-3 text-blue-600"></i>
+          My Skills
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Skill 1 -->
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium flex items-center">
+                <i class="fab fa-html5 mr-2 text-orange-500"></i>
+                HTML5
+              </span>
+              <span>90%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-orange-500 h-2.5 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          
+          <!-- Skill 2 -->
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium flex items-center">
+                <i class="fab fa-css3-alt mr-2 text-blue-500"></i>
+                CSS3
+              </span>
+              <span>85%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          
+          <!-- Skill 3 -->
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium flex items-center">
+                <i class="fab fa-js-square mr-2 text-yellow-500"></i>
+                JavaScript
+              </span>
+              <span>80%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          
+          <!-- Skill 4 -->
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium flex items-center">
+                <i class="fab fa-python mr-2 text-blue-600"></i>
+                Python
+              </span>
+              <span>75%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+          
+          <!-- Skill 5 -->
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium flex items-center">
+                <i class="fab fa-java mr-2 text-red-500"></i>
+                Java
+              </span>
+              <span>70%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-red-500 h-2.5 rounded-full" style="width: 70%"></div>
+            </div>
+          </div>
+          
+          <!-- Skill 6 -->
+          <div class="skill-item">
+            <div class="flex justify-between mb-2">
+              <span class="font-medium flex items-center">
+                <i class="fab fa-react mr-2 text-blue-400"></i>
+                React
+              </span>
+              <span>65%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-400 h-2.5 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section with improved 3D cards -->
+  <section class="py-20 bg-gray-50" id="projects">
+    <div class="container mx-auto px-6" data-aos="slide-left">
+      <div class="text-center mb-16">
+        <h2 class="section-heading text-4xl font-bold mb-4 relative inline-block">
+          <span class="relative z-10">My Projects</span>
+          <span class="absolute -bottom-2 left-0 w-full h-2 bg-blue-100 z-0"></span>
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Some of my recent work and contributions
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 with enhanced card -->
+        <div class="card-3d bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2" data-aos="flip-up">
+          <div class="relative overflow-hidden rounded-lg mb-4 h-48">
+            <img alt="Project 1 screenshot" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" src="food_1.jpeg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+              <span class="text-white font-medium">Food Delivery App</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">
+              <i class="fas fa-utensils mr-2 text-blue-500"></i>
+              Food Delivery Website
+            </h3>
+            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Frontend</span>
+          </div>
+          <p class="text-gray-600 mb-4">
+            A static food delivery website built with HTML and CSS featuring a visually engaging interface with multiple food-related images and responsive design.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Responsive</span>
+          </div>
+          <div class="flex justify-between">
+            <a class="btn-3d btn-blue flex items-center" href="https://github.com/PRITAM-TU/Food_delivery" target="_blank">
+              <i class="fas fa-code mr-2"></i> View Code
+            </a>
+            <a class="btn-3d btn-secondary flex items-center" href="https://pritam-tu.github.io/Food_delivery/" target="_blank">
+              <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project 2 with enhanced card -->
+        <div class="card-3d bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2" data-aos="flip-up" data-aos-delay="100">
+          <div class="relative overflow-hidden rounded-lg mb-4 h-48">
+            <img alt="Project 2 screenshot" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" src="calculatoor_1.jpg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+              <span class="text-white font-medium">Calculator App</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">
+              <i class="fas fa-calculator mr-2 text-purple-500"></i>
+              Interactive Calculator
+            </h3>
+            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">JavaScript</span>
+          </div>
+          <p class="text-gray-600 mb-4">
+            A calculator project with basic arithmetic operations functionalities like addition, subtraction, multiplication, and division built with HTML, CSS, and JavaScript.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <div class="flex justify-between">
+            <a class="btn-3d btn-blue flex items-center" href="https://github.com/PRITAM-TU/codealpha_Task_1" target="_blank">
+              <i class="fas fa-code mr-2"></i> View Code
+            </a>
+            <a class="btn-3d btn-secondary flex items-center" href="#" target="_blank">
+              <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project 3 with enhanced card -->
+        <div class="card-3d bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-2" data-aos="flip-up" data-aos-delay="200">
+          <div class="relative overflow-hidden rounded-lg mb-4 h-48">
+            <img alt="Project 3 screenshot" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" src="music_1.jpeg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+              <span class="text-white font-medium">Music Player</span>
+            </div>
+          </div>
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-bold">
+              <i class="fas fa-music mr-2 text-red-500"></i>
+              Music Player
+            </h3>
+            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Web App</span>
+          </div>
+          <p class="text-gray-600 mb-4">
+            A music player web application with play/pause, skip, and volume controls built with HTML, CSS, and JavaScript for audio functionality.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Audio API</span>
+          </div>
+          <div class="flex justify-between">
+            <a class="btn-3d btn-blue flex items-center" href="https://github.com/PRITAM-TU/codealpha_Task_4" target="_blank">
+              <i class="fas fa-code mr-2"></i> View Code
+            </a>
+            <a class="btn-3d btn-secondary flex items-center" href="#" target="_blank">
+              <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- GitHub Stats -->
+      <div class="mt-16 bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-6 text-center flex items-center justify-center">
+          <i class="fab fa-github mr-3"></i>
+          My GitHub Contributions
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="stat-card bg-gray-50 p-6 rounded-lg text-center">
+            <div class="text-4xl font-bold text-blue-600 mb-2">
+              <i class="fas fa-code-branch"></i> 15+
+            </div>
+            <div class="text-gray-600">Repositories</div>
+          </div>
+          <div class="stat-card bg-gray-50 p-6 rounded-lg text-center">
+            <div class="text-4xl font-bold text-green-600 mb-2">
+              <i class="fas fa-code-commit"></i> 50+
+            </div>
+            <div class="text-gray-600">Commits</div>
+          </div>
+          <div class="stat-card bg-gray-50 p-6 rounded-lg text-center">
+            <div class="text-4xl font-bold text-purple-600 mb-2">
+              <i class="fas fa-star"></i> 10+
+            </div>
+            <div class="text-gray-600">Project Stars</div>
+          </div>
+        </div>
+        <div class="text-center mt-6">
+          <a href="https://github.com/PRITAM-TU" target="_blank" class="btn-3d btn-primary inline-flex items-center">
+            <i class="fab fa-github mr-2"></i> View My GitHub Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with improved form -->
+  <section id="contact" class="py-20 bg-gradient-to-r from-blue-600 to-purple-600" class="c_colour">
+    <div class="container mx-auto px-6" data-aos="flip-up">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-white">Get In Touch</h2>
+        <p class="text-blue-100 max-w-2xl mx-auto">
+          Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+        </p>
+      </div>
+      
+      <div class="flex flex-col lg:flex-row gap-12">
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/20">
+            <h3 class="text-2xl font-bold mb-6 text-white flex items-center">
+              <i class="fas fa-paper-plane mr-3"></i>
+              Contact Information
+            </h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-blue-500 text-white p-3 rounded-full mr-4">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">Email</h4>
+                  <a href="mailto:pritamtung2003@gmail.com" class="text-blue-100 hover:text-white">pritamtung2003@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-green-500 text-white p-3 rounded-full mr-4">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">Phone</h4>
+                  <a href="tel:+919163857728" class="text-blue-100 hover:text-white">+91 9339768425</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-purple-500 text-white p-3 rounded-full mr-4">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white">Location</h4>
+                  <p class="text-blue-100">Hooghly, West Bengal, India</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="font-bold text-white mb-4 flex items-center">
+                <i class="fas fa-share-alt mr-2"></i>
+                Connect with me
+              </h4>
+              <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/pritam-t-545866266/" target="_blank" class="social-icon bg-blue-700 hover:bg-blue-800">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/PRITAM-TU" target="_blank" class="social-icon bg-gray-800 hover:bg-gray-900">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100079777150764" target="_blank" class="social-icon bg-blue-600 hover:bg-blue-700">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon bg-blue-400 hover:bg-blue-500">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2" data-aos="fade-left">
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+              <i class="fas fa-envelope mr-3 text-blue-600"></i>
+              Send Me a Message
+            </h3>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+              <input type="hidden" name="access_key" value="c179d6b7-708e-4ce7-99e9-04bb34a96d3b">
+              
+              <div class="form-group">
+                <label for="name" class="block mb-2 font-medium text-gray-700">
+                  <i class="fas fa-user mr-2 text-blue-500"></i>
+                  Your Name
+                </label>
+                <input 
+                  id="name" 
+                  type="text" 
+                  name="name" 
+                  required 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder="Enter your name"
+                >
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="block mb-2 font-medium text-gray-700">
+                  <i class="fas fa-envelope mr-2 text-blue-500"></i>
+                  Email Address
+                </label>
+                <input 
+                  id="email" 
+                  type="email" 
+                  name="email" 
+                  required 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder="Enter your email"
+                >
+              </div>
+              
+              <div class="form-group">
+                <label for="message" class="block mb-2 font-medium text-gray-700">
+                  <i class="fas fa-comment-alt mr-2 text-blue-500"></i>
+                  Your Message
+                </label>
+                <textarea 
+                  id="message" 
+                  rows="5" 
+                  name="message" 
+                  required 
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  placeholder="Enter your message"
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit" 
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Download CV Section with improved design -->
+  <section class="py-20 bg-white" id="download">
+    <div class="container mx-auto px-6 text-center" data-aos="slide-left">
+      <div class="max-w-3xl mx-auto bg-gray-50 p-8 md:p-12 rounded-xl shadow-inner">
+        <h2 class="text-3xl font-bold mb-4 flex items-center justify-center">
+          <i class="fas fa-file-download mr-3 text-blue-600"></i>
+          Download My Resume
+        </h2>
+        <p class="text-gray-600 mb-8">
+          Want to know more about my professional journey? Download my detailed resume to see my full experience, skills, and education.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a 
+            href="path/to/your/cv.pdf" 
+            download="Pritam_Tung_Resume.pdf"
+            class="btn-download bg-blue-600 hover:bg-blue-700 flex items-center justify-center"
+          >
+            <i class="fas fa-file-pdf mr-2"></i>
+            Download PDF
+          </a>
+          
+          <a 
+            href="path/to/your/cv.docx" 
+            download="Pritam_Tung_Resume.docx"
+            class="btn-download bg-green-600 hover:bg-green-700 flex items-center justify-center"
+          >
+            <i class="fas fa-file-word mr-2"></i>
+            Download DOCX
+          </a>
+        </div>
+        
+        <div class="mt-8 pt-8 border-t border-gray-200">
+          <h3 class="text-xl font-bold mb-4 flex items-center justify-center">
+            <i class="fas fa-certificate mr-2 text-yellow-500"></i>
+            Certifications
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="certificate-card bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+              <h4 class="font-bold mb-2 flex items-center">
+                <i class="fas fa-code mr-2 text-blue-500"></i>
+                Web Development
+              </h4>
+              <p class="text-sm text-gray-600">CodeAlpha - 2023</p>
+            </div>
+            <div class="certificate-card bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
+              <h4 class="font-bold mb-2 flex items-center">
+                <i class="fab fa-python mr-2 text-green-500"></i>
+                Python Programming
+              </h4>
+              <p class="text-sm text-gray-600">Udemy - 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer with improved design -->
+  <footer class="bg-gray-900 text-white py-12" id="footer_1">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h2 class="logo text-2xl">
+            <span class="text-white">P</span><span class="text-blue-400">ritam_2.O</span>
+          </h2>
+          <p class="mt-2 text-gray-400">
+            Crafting digital experiences that matter
+          </p>
+        </div>
+        
+        <div class="flex space-x-6 mb-6 md:mb-0">
+          <a href="#about" class="text-gray-400 hover:text-white transition-colors">
+            About
+          </a>
+          <a href="#projects" class="text-gray-400 hover:text-white transition-colors">
+            Projects
+          </a>
+          <a href="#contact" class="text-gray-400 hover:text-white transition-colors">
+            Contact
+          </a>
+          <a href="#download" class="text-gray-400 hover:text-white transition-colors">
+            Resume
+          </a>
+        </div>
+        
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/profile.php?id=100079777150764" target="_blank" class="social-icon-footer hover:bg-blue-600">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon-footer hover:bg-blue-400">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/pritam-t-545866266/" target="_blank" class="social-icon-footer hover:bg-blue-700">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/PRITAM-TU" target="_blank" class="social-icon-footer hover:bg-gray-700">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <p>
+          <i class="far fa-copyright mr-1"></i> 2025 Pritam Tung. All rights reserved.
+        </p>
+        <p class="mt-2">
+          Made with <i class="fas fa-heart text-red-500 mx-1"></i> in India
+        </p>
+        
+        <!-- Back to top button -->
+        <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-700 transition-all">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: 'ease-in-out',
+      once: false
+    });
+
+    // Loading screen
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.querySelector('.loading-screen').classList.add('fade-out');
+        setTimeout(function() {
+          document.querySelector('.loading-screen').style.display = 'none';
+        }, 500);
+      }, 1500);
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const icon = document.getElementById('icon');
+    
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+      if (document.body.classList.contains('dark-theme')) {
+        icon.src = "sun.png";
+        localStorage.setItem('theme', 'dark');
+      } else {
+        icon.src = "moon.png";
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
+    themeToggleMobile.addEventListener('click', toggleTheme);
+    
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('dark-theme');
+      icon.src = "sun.png";
+    }
+
+    // Mobile navigation toggle
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+      const navMobile = document.getElementById('nav-mobile');
+      navMobile.classList.toggle('hidden');
+      this.classList.toggle('active');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          const navMobile = document.getElementById('nav-mobile');
+          if (!navMobile.classList.contains('hidden')) {
+            navMobile.classList.add('hidden');
+          }
+        }
+      });
+    });
+
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('hidden');
+      } else {
+        backToTopButton.classList.add('hidden');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Initialize particles.js
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#3b82f6"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.3,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#3b82f6",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+    // Form submission
+    const contactForm = document.querySelector('#contact form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        
+        // Show loading state
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+        
+        fetch(this.action, {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            submitButton.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
+            this.reset();
+          } else {
+            submitButton.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i> Error!';
+          }
+        })
+        .catch(error => {
+          submitButton.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i> Error!';
+        })
+        .finally(() => {
+          setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+          }, 3000);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

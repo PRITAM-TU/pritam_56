@@ -1,0 +1,16 @@
+/* style.css */
+/* Base Styles */
+body {
+    font-family: "Roboto", sans-serif;
+      background-color: #f8f9fa;
+     
+    }
+    html, body {
+       
+      scroll-behavior: smooth;
+       scroll-snap-type: y; 
+       overflow-x: hidden;
+    }
+  
+  #contact{  --tw-gradient-from: #03050c var(--tw-gradient-from-position);
+  }
