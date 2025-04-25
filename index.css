@@ -11,9 +11,30 @@ body {
   body{
     overflow-x: hidden;
   }
+  @media (max-width: 768px) {
+    html{
+      overflow-x: hidden;
+    }
+  }
   #about{
     background: linear-gradient(to right, #c7c8d4, #6f67b5);
   }
   #projects{
     background: linear-gradient(to right, #dcddec, #aa61ca);
   }
+  #header_color{
+    background: #ede8f5;
+  }
+#your_colour{
+  background:linear-gradient(to right, #c7c8d4, #6f67b5) ;
+}
+#contact_color
+{
+  background:linear-gradient(to right, #9bffd7, #c243d8);
+}
+#download{
+  background:linear-gradient(to right, #9bffd7, #c243d8);
+}
+#box_colour{
+  background: linear-gradient(to right, #c7c8d4, #6f67b5);
+}
