@@ -5,12 +5,15 @@ body {
       background-color: #f8f9fa;
      
     }
-    html, body {
-       
-      scroll-behavior: smooth;
-       scroll-snap-type: y; 
-       overflow-x: hidden;
-    }
   
   #contact{  --tw-gradient-from: #03050c var(--tw-gradient-from-position);
+  }
+  body{
+    overflow-x: hidden;
+  }
+  #about{
+    background: linear-gradient(to right, #c7c8d4, #6f67b5);
+  }
+  #projects{
+    background: linear-gradient(to right, #dcddec, #aa61ca);
   }
