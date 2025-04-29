@@ -38,3 +38,33 @@ body {
 #box_colour{
   background: linear-gradient(to right, #c7c8d4, #6f67b5);
 }
+body {
+  cursor: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+background-color: white;
+  min-height: 100vh;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #531771, #e51eff, #FFFFFF, #34ff78);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+  z-index: 9999;
+}
+
+.smoke-particle {
+  position: absolute;
+  background: linear-gradient(45deg, #171655, #ff2386);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  filter: blur(5px);
+  z-index: 9998;
+}
